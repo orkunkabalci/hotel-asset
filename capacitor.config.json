@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "hotel-asset",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
