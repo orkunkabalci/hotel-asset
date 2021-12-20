@@ -22,12 +22,13 @@
     font-weight: bold;
     font-family: "Playfair Display", Sans-serif;
     font-style: oblique;
-margin-left: 30px; 
+    margin-left: 30px;
   }
   .properties {
     font-family: "Playfair Display", Sans-serif;
     font-size: 16px;
-margin-left: 50px;  }
+    margin-left: 50px;
+  }
   .description {
     font-size: larger;
     font-family: "Times New Roman", Sans-serif;
@@ -38,7 +39,7 @@ margin-left: 50px;  }
   .slides {
     padding: 0 25px 0 25px;
   }
-  .active{
+  .active {
     border-style: solid;
     border-width: 1px;
     border-color: blue;
