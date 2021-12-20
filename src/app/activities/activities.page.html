@@ -1,0 +1,7 @@
+<ion-content> 
+  <div class="activity" *ngFor="let activitiy of activities">
+    <h3 class="activitytitle">{{activitiy.name|titlecase}}</h3>
+      <img class="activityimg" [src]="activitiy?.images">
+      <p class="activitydesc"> {{activitiy?.description}} </p>
+  </div>
+</ion-content>

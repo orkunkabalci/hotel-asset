@@ -1,0 +1,143 @@
+<ion-content>
+    <div>
+        <ion-slides pager="false" [options]="slideOpts">
+            <ion-slide *ngFor="let slide of hotelwebeditor?.homepage.slides">
+                <img class="background" src="{{slide}}" alt="">
+            </ion-slide>
+
+        </ion-slides>
+        <div>
+
+
+            <div>
+                <p class="itstime">It's time to</p>
+            </div>
+            <div>
+                <h2 class="travel">Travel!</h2>
+            </div>
+        </div>
+        <div>
+            <ion-icon class="heart" name="heart"></ion-icon>
+        </div>
+        <div>
+            <h3 class="slogan">Suitable for all budgets, in the most vital part of the city! ...</h3>
+        </div>
+        <div>
+
+            <ion-button (click)="scroll(aboutus,undefined)" class="abtusbtn" shape="round" fill="outline">About Us
+            </ion-button>
+
+        </div>
+        <div #reserve class="btnsdiv">
+            <div class="btnsdivs">
+                <ion-fab-button [class.active]="checkactive('1')" class="btn1">1</ion-fab-button>
+            </div>
+            <div class="btnsdivs">
+                <ion-fab-button [class.active]="checkactive('2')" class="btn2">2</ion-fab-button>
+            </div>
+            <div class="btnsdivs">
+                <ion-fab-button [class.active]="checkactive('3')" class="btn3">3</ion-fab-button>
+            </div>
+        </div>
+        <div *ngIf="reservationpage=='1'" class="inputdiv1">
+            <ion-input [(ngModel)]="reservation.adult" class="input" type="number" placeholder="Adult"></ion-input>
+            <ion-input [(ngModel)]="reservation.children" class="input" type="number" placeholder="Child"></ion-input>
+            <ion-item class="select" lines="none">
+                <ion-label>Select Room</ion-label>
+                <ion-select [(ngModel)]="reservation.room">
+                    <ion-select-option *ngFor="let item of rooms" [value]="item._id"> {{item.name|titlecase}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+
+            <ion-button class="div1nextbtn" expand="block" (click)="reservationpagec('2')">Next</ion-button>
+
+        </div>
+        <div *ngIf="reservationpage=='2'" class="inputdiv2">
+            <ion-input [(ngModel)]="reservation.name" class="input" placeholder="Name & Surname"></ion-input>   
+            <ion-input [(ngModel)]="reservation.mail" class="input" type="email" placeholder="Email"></ion-input>
+            <ion-input [(ngModel)]="reservation.phone_number" class="input" type="number" placeholder="Phone">
+            </ion-input>
+            <ion-button class="div2btn" (click)="reservationpagec('1')">Back</ion-button>
+            <ion-button class="div2btn" (click)="reservationpagec('3')">Next</ion-button>
+        </div>
+
+        <div *ngIf="reservationpage=='3'" class="inputdiv3">
+            <ion-datetime [(ngModel)]="reservation.check_in" (ngModelChange)="datechange()" placeholder="Check in" displayFormat="DD/MM/YYYY"
+                [min]="now"  max="2030-12-09"></ion-datetime>
+                
+            <ion-datetime  [(ngModel)]="reservation.check_out"  [disabled]="checkdate()" placeholder="Check out" displayFormat="DD/MM/YYYY"
+                [min]="reservation.check_in" max="2030"></ion-datetime>
+            <ion-button class="div2btn" (click)="reservationpagec('2')">Back</ion-button>
+            <ion-button (click)="insert()" class="div2btn">
+                <ion-icon slot="start" name="checkmark-sharp"></ion-icon>
+            </ion-button>
+        </div>
+    </div>
+    <div>
+        <h2 class="p2title">
+            Rooms & Suits
+        </h2>
+    </div>
+    <div class="roomsbackground">
+        <div class="roomsdiv">
+            <div *ngFor="let room of rooms">
+                <img [routerLink]="['/room',room?._id]" class="roomsimg" [src]="room.head_image">
+                <h3 class="roomsnames"> {{room.name|titlecase}} </h3>
+                <p class="roomsdescription"> {{room.description|titlecase}} </p>
+                <ion-button class="reservationbtn" (click)="scroll(reserve,room._id)" shape="round" fill="outline">
+                    RESEVATION
+                </ion-button>
+
+            </div>
+        </div>
+    </div>
+
+    <div #aboutus class="abtusdiv">
+        <h2 class="aboutustitle">About Us</h2>
+        <p class="abtdesc"> {{hotelwebeditor?.about}} </p>
+        <ion-button routerLink="/about-us" class="detailbtn" shape="round" fill="outline">DETAILS <ion-icon
+                class="detailicon" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+        <a target="blank" href="{{hotelwebeditor?.contact.facebook_link}}">
+            <ion-icon class="facelogo" name="logo-facebook"></ion-icon>
+        </a>
+        <a target="blank" href="{{hotelwebeditor?.contact.instagram_link}}">
+            <ion-icon class="instalogo" name="logo-instagram"></ion-icon>
+        </a>
+    </div>
+
+    <div class="specialtiesdiv">
+
+        <h2 class="spectitle"> <span class="bold">Rooms</span> <span class="italic"> & Amenities</span> </h2>
+        <p class="spectitle2">LUST FOR YOUR COMFORT</p>
+        <P class="specdesc">All of our rooms have been renovated during the Covid 19 process and are regularly
+            disinfected. We are here with our new face to offer you a comfortable and healthy holiday.</P>
+        <div class="propertiesdiv">
+            <p class="properties" *ngFor="let property of properties"> {{property?.name|titlecase}} </p>
+            <p class="properties">And much more is waiting for you ...</p>
+        </div>
+        <div class="space">
+
+        </div>
+    </div>
+    <div>
+        <h2 class="aboutustitle">Activities</h2>
+
+        <div class="activity" *ngFor="let activitiy of activities">
+            <h3 class="activitytitle">{{activitiy.name|titlecase}}</h3>
+            <img class="activityimg" [src]="activitiy?.images">
+            <div class="activitydesc" >
+                {{activitiy?.description}}
+            </div>
+            <div class="showmore" *ngIf="activitiy.visible==false">
+                <a routerLink="/activities">...show more</a>
+            </div>
+        </div>
+    </div>
+    <a class="wpa" href="https://wa.me/{{hotelwebeditor?.contact.phone_number}}" target="_blank">
+        <ion-icon class="wpicon" name="logo-whatsapp"></ion-icon>
+    </a>
+
+</ion-content>

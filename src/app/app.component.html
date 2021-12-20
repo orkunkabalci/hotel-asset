@@ -1,29 +1,47 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+    <div class="header">
+        <div class="logodiv">
+            <img class="logo" (click)="hide('off')" routerLink="/home" [src]="hotelwebeditor?.homepage.logo">
+        </div>
+        <div class="icondiv">
+            <ion-fab-button color="light" *ngIf="hidevalue=='off'" (click)="hide('on')">
+                <ion-icon class="icon" name="menu-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button *ngIf="hidevalue=='on'" (click)="hide('off')" color="light">
+                <ion-icon class="icon" name="close-outline"></ion-icon>
+            </ion-fab-button>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+        </div>
+    </div>
+    <div class="menu" [class.active]="hidevalue=='on'">
+        <ion-list class="menulist">
+            <ion-item lines="none" detail="false" routerLink="/home" (click)="hide('off')">
+                Home
             </ion-item>
-          </ion-menu-toggle>
+            <ion-item lines="none" detail="false" routerLink="/about-us" (click)="hide('off')">
+                About Us
+            </ion-item>
+            <ion-item (click)="showrooms()" lines="none">
+                Rooms <ion-icon class="roomicon" *ngIf="roomsvalue=='off'" name="chevron-down-outline" slot="end">
+                </ion-icon>
+                <ion-icon class="roomicon" *ngIf="roomsvalue=='on'" name="chevron-up-outline" slot="end">
+                </ion-icon>
+            </ion-item>
+            <div class="menuroom"   [class.active]="roomsvalue=='on'"  >
+                <ion-item lines="none" *ngFor="let item of rooms"  detail="false" (click)="hide('off')" [routerLink]="['/room',item?._id]" >
+                    <ion-icon class="roomsicon" name="chevron-forward-outline"></ion-icon> {{item?.name|titlecase}}
+                </ion-item>
+            </div>
+            <ion-item lines="none" detail="false" routerLink="/contact-us" (click)="hide('off')">
+                Contact Us
+            </ion-item>
+            <ion-item lines="none" detail="false" routerLink="/activities" (click)="hide('off')">
+                Activities
+            </ion-item>
         </ion-list>
+    </div>
 
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+    <ion-content>
+        <ion-router-outlet id="main"></ion-router-outlet>
+    </ion-content>
 </ion-app>

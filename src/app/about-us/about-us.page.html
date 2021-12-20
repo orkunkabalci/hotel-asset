@@ -1,0 +1,19 @@
+<ion-content>
+  <div class="imgsdiv">
+    <h2 class="aboutustitle">About Us</h2>
+    <img *ngFor="let item of hotelwebeditor?.homepage.slides" class="imgs" [src]="item">
+  </div>
+  <div>
+    <div class="abtusdiv">
+      <p class="abtdesc"> {{hotelwebeditor?.about}} </p>
+      <a target="blank" href="{{hotelwebeditor?.contact.facebook_link}}">
+        <ion-icon class="facelogo" name="logo-facebook"></ion-icon>
+      </a>
+      <a target="blank" href="{{hotelwebeditor?.contact.instagram_link}}">
+        <ion-icon class="instalogo" name="logo-instagram"></ion-icon>
+      </a>
+      <ion-button routerLink="/contact-us" class="contacttitle" shape="round" fill="outline">Contact Us<ion-icon class="contacticon" name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

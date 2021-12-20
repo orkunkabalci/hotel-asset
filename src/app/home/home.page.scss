@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:host {
+  ::ng-deep {
+    .active {
+      --background: blue;
+    }
+  }
+  .wpicon {
+    color: white;
+    width: 50px;
+    height: 50px;
+  }
+  ion-slides {
+    position: absolute;
+    height: 410px !important;
+    width: 365px;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+  }
+  .background {
+    min-height: 410px;
+    min-width: 365px;
+
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    position: fixed;
+  }
+
+  .wpa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 99999999;
+    background-color: #25d366;
+    border-radius: 15%;
+  }
+  .heart {
+    margin-left: 140px;
+    width: 100px;
+    height: 100px;
+    color: #066473;
+  }
+  .abtusbtn {
+    margin-left: 130px;
+  }
+  .itstime {
+    color: #066473;
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 24px;
+    font-style: oblique;
+    text-align: center;
+  }
+  .travel {
+    font-size: 51px;
+    letter-spacing: -2.1px;
+    color: #066473;
+    font-family: "Playfair Display", Sans-serif;
+    line-height: 1em;
+    text-align: center;
+    font-style: oblique;
+  }
+  .slogan {
+    color: #2b2b2b;
+    font-family: "Times New Roman", Sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0em 2em 3em 2em;
+  }
+  .steps {
+    margin: 5px;
+    border-radius: 50%;
+  }
+  .btn1 {
+    width: 50px;
+    height: 50px;
+  }
+  .btn2 {
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+  }
+  .btn3 {
+    width: 50px;
+    height: 50px;
+    margin-left: 48px;
+  }
+  .btnsdivs {
+    flex: 33%;
+  }
+  .btnsdiv {
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 70px;
+    display: flex;
+  }
+  .inputdiv1 {
+    padding: 20px 40px 0 40px;
+  }
+  ion-datetime {
+    border-style: solid;
+    border-width: 1px;
+    --padding: 10px 0 5px 0px;
+    border-radius: 4px;
+    --padding-start: 10px;
+    margin-bottom: 5px;
+  }
+  .input {
+    border-style: solid;
+    border-width: 1px;
+    --padding: 10px 0 5px 0px;
+    border-radius: 4px;
+    --padding-start: 10px;
+    margin-bottom: 5px;
+  }
+  .inputdiv2 {
+    padding: 20px 40px 0 40px;
+  }
+  .inputdiv3 {
+    padding: 20px 40px 0 40px;
+  }
+  ion-checkbox {
+    --size: 13px;
+    margin-left: 3px;
+  }
+  .catcheck {
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 13px;
+  }
+  .div1nextbtn {
+    height: 48px;
+  }
+  .div2btn {
+    flex: 50%;
+    height: 48px;
+    width: 142px;
+  }
+
+  .p2title {
+    font-size: 36px;
+    color: #6ec1e4;
+    font-family: "Playfair Display", Sans-serif;
+    line-height: 1em;
+    letter-spacing: -1.6px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  .roomsdiv {
+    padding: 20px 40px 0 40px;
+  }
+  .select {
+    border-style: solid;
+    border-width: 1px;
+    --padding: 10px 0 5px 0px;
+    border-radius: 4px;
+    --padding-start: 10px;
+    margin-bottom: 5px;
+  }
+  .roomsnames {
+    text-align: center;
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 29px;
+    color: #066473;
+  }
+  .roomsdescription {
+    text-align: center;
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 14px;
+  }
+  .reservationbtn {
+    margin-top: 25px;
+    margin-bottom: 70px;
+    margin-left: 70px;
+  }
+  .roomsimg {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    width: 295px;
+    height: 210px;
+  }
+  .abtusdiv {
+    padding: 20px 40px 0 40px;
+  }
+  .aboutustitle {
+    text-align: center;
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 40px;
+    color: #066473;
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: 1px;
+    font-style: oblique;
+  }
+  .abtdesc {
+    color: #000000;
+    font-family: "Times New Roman", Sans-serif;
+    font-size: 16px;
+    line-height: 1.8em;
+    letter-spacing: 1px;
+  }
+  .detailicon {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  .detailbtn {
+    margin-top: 50px;
+    margin-left: 75px;
+    margin-bottom: 25px;
+    margin-right: 50px;
+  }
+  .facelogo {
+    font-size: 64px;
+    color: #4267b2;
+    margin-left: 75px;
+  }
+  .instalogo {
+    margin-left: 10px;
+    color: #c13584;
+    font-size: 64px;
+  }
+  .specialtiesdiv {
+    padding: 20px 40px 0 40px;
+  }
+  .spectitle {
+    text-align: center;
+    font-family: "Playfair Display", Sans-serif;
+    line-height: 1em;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .spectitle2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 11px;
+    line-height: 2.2em;
+    text-align: center;
+    font-style: inherit;
+    font-weight: inherit;
+  }
+  .specdesc {
+    font-size: 14px;
+    font-family: "Montserrat", Sans-serif;
+    text-align: center;
+  }
+  .properties {
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: bold;
+    padding: 8px;
+  }
+  .propertiesdiv {
+    margin-top: 50px;
+  }
+  .space {
+    padding: 25px 25px 25px 25px;
+  }
+  .activity {
+    padding: 20px 40px 0 40px;
+  }
+  .activityimg {
+    width: 295px;
+    height: 200px;
+  }
+  ::ng-deep {
+    .show {
+      overflow: visible !important;
+      height: auto !important;
+      margin-bottom: 40px;
+
+    }
+  }
+  .activitydesc {
+    color: #2b2b2b;
+    font-family: "Times New Roman", Sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    line-height: 16px;
+    height: 95px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .activitytitle {
+    color: #066473;
+    font-family: "Times New Roman", Sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-style: oblique;
+    text-align: center;
+  }
+  .showmore{
+    margin: 10px 0 40px 200px;
+
+  }
+}

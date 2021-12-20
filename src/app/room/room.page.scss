@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:host {
+  .features {
+    flex: 25%;
+  }
+  .roomsimg {
+    height: 100px;
+    object-fit: cover;
+    width: 120px;
+  }
+  .mainimg {
+    width: 325px;
+    height: 210px;
+    margin: 25px;
+  }
+  .main {
+    padding: 5px;
+  }
+
+  .title {
+    font-weight: bold;
+    font-family: "Playfair Display", Sans-serif;
+    font-style: oblique;
+margin-left: 30px; 
+  }
+  .properties {
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 16px;
+margin-left: 50px;  }
+  .description {
+    font-size: larger;
+    font-family: "Times New Roman", Sans-serif;
+    font-style: oblique;
+    margin: 24px;
+    margin-left: 30px;
+  }
+  .slides {
+    padding: 0 25px 0 25px;
+  }
+  .active{
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+  }
+}

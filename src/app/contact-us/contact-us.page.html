@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="maindiv">
+    <div #map id="map" class="map" >
+
+    </div>
+    <div class="infodiv" >
+      <h2 class="title">Contact Us</h2>
+      <div>
+        <ion-icon name="business-outline"></ion-icon>
+        <p class="contacth" >Adress</p>
+        <p class="contactp">{{hotelwebeditor?.contact.adress|titlecase}} </p> 
+        <ion-icon name="mail-open-outline"></ion-icon>
+        <p class="contacth" >Mail</p>
+
+        <a href="mailto:{{hotelwebeditor?.contact.mail}} "><p class="contactp">{{hotelwebeditor?.contact.mail}} </p></a>
+
+
+
+        
+        <ion-icon name="call-outline"></ion-icon>
+        <p class="contacth" >Phone number</p>
+
+        <a href="tel:{{hotelwebeditor?.contact.phone_number}}">  <p class="contactp">{{hotelwebeditor?.contact.phone_number}} </p> </a>
+      </div>
+    </div>
+    
+
+    <div>
+      <a target="blank" href="{{hotelwebeditor?.contact.facebook_link}}"><ion-icon class="facelogo" name="logo-facebook"></ion-icon></a> 
+      <a target="blank" href="{{hotelwebeditor?.contact.instagram_link}}"><ion-icon class="instalogo" name="logo-instagram"></ion-icon></a> 
+      
+    </div>
+  </div>
+  
+</ion-content>

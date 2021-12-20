@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{room?.name|titlecase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+
+    <div class="mainimgdiv">
+      <img class="mainimg" [src]="selectedimg">
+    </div>
+
+    <div class="slides">
+      <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide *ngFor="let image of room?.images">
+          <img   (click)="imgclick(image)" class="roomsimg" [src]="image"  [class.active]="activeimg(image)" >
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+
+    <div class="main">
+      <p class="description">{{room?.description|titlecase}}</p>
+      <div class="features">
+        <h2 class="title">Room's Features</h2>
+        <p class="properties" *ngFor="let item of room?.properties">
+          {{item.name|titlecase}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+  
+</ion-content>

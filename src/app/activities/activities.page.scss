@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:host{
+    .activity{  
+        padding: 0 20px 0 20px;
+
+    }
+    .activityimg{
+        width: 335px;
+        height: 200px;
+    }
+    .activitydesc{
+        color: #2b2b2b;
+        font-family: "Times New Roman", Sans-serif;
+        font-size: 20px;
+        padding: 0 20px 0 20px;
+
+    }
+    .activitytitle{
+        color: #066473;
+        font-family: "Times New Roman", Sans-serif;
+        font-size: 25px;
+        text-transform: uppercase;
+        font-style: oblique;
+        text-align: center;
+    }
+}
